@@ -1,5 +1,5 @@
-const imageContainer = document.getElementById('image-container');
-const loader = document.getElementById('loader');
+const imageContainer = document.getElementById("image-container");
+const loader = document.getElementById("loader");
 let api_url = "https://www.reddit.com/r/pics/top/.json?limit=20"
 let pics = [];
 let isFetching = false
@@ -7,8 +7,8 @@ let isFetching = false
 // Create Img Node and Add to DOM
 const displayPics = () => {
   pics.forEach(photo => {
-    const item = document.createElement('a');
-    const img = document.createElement('img');
+    const item = document.createElement("a");
+    const img = document.createElement("img");
     img.setAttribute("src", photo)
     item.appendChild(img);
     imageContainer.appendChild(item);
@@ -41,7 +41,7 @@ const getImages = async() =>{
 } 
 
 // Check to see if scrolling near bottom of page, Load More Pics
-window.addEventListener('scroll', () => {
+window.addEventListener("scroll", () => {
   if (!isFetching && window.innerHeight + window.scrollY >= document.body.offsetHeight - 1000) {
     getImages();
   }
